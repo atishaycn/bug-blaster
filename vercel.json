@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "functions": {
+    "api/scores.js": {
+      "maxDuration": 10
+    }
+  }
+}

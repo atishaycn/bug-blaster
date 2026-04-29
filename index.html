@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bug Blaster</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="game-card" aria-label="Bug Blaster game">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Canvas arcade</p>
+            <h1>Bug Blaster</h1>
+          </div>
+          <button id="muteButton" type="button" aria-label="Toggle sound">Sound On</button>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" width="960" height="360" aria-label="Bug Blaster canvas"></canvas>
+          <button id="restartButton" class="restart-button" type="button">Restart</button>
+        </div>
+        <div class="control-strip" aria-label="Controls">
+          <span>Space: Jump</span>
+          <span>Enter: Start or Restart</span>
+          <span>P: Pause</span>
+          <span>M: Mute</span>
+        </div>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>

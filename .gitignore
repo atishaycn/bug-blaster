@@ -1,0 +1,6 @@
+.data/
+.vercel/
+node_modules/
+.DS_Store
+Screenshot*.png
+.vercel

@@ -1,0 +1,11 @@
+{
+  "name": "bug-blaster",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check": "node --check game.js && node --check api/scores.js"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}
