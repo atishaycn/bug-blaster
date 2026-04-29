@@ -541,7 +541,7 @@ class Game {
     this.leaderboard = normalizeScores([...this.leaderboard, entry]);
     saveLocalLeaderboard(this.leaderboard);
     postScore(entry).then((scores) => {
-      if (scores.length) this.setLeaderboard(scores);
+      if (scores) this.setLeaderboard(scores);
     });
     this.highScore = Math.max(this.highScore, this.leaderboard[0]?.score || 0);
     this.pendingEntry = null;
@@ -550,7 +550,7 @@ class Game {
 
   async syncScores() {
     const scores = await fetchScores();
-    if (scores.length) this.setLeaderboard(scores);
+    if (scores) this.setLeaderboard(scores);
   }
 
   setLeaderboard(scores) {
@@ -626,11 +626,11 @@ function normalizeScores(rows) {
 async function fetchScores() {
   try {
     const response = await fetch(SCORE_API, { cache: "no-store" });
-    if (!response.ok) return [];
+    if (!response.ok) return null;
     const data = await response.json();
     return normalizeScores(data.scores);
   } catch {
-    return [];
+    return null;
   }
 }
 
@@ -641,11 +641,11 @@ async function postScore(entry) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(entry)
     });
-    if (!response.ok) return [];
+    if (!response.ok) return null;
     const data = await response.json();
     return normalizeScores(data.scores);
   } catch {
-    return [];
+    return null;
   }
 }
 

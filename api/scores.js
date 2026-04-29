@@ -5,11 +5,7 @@ const KEY = "bug-blaster:leaderboard";
 const LOCAL_FILE = path.join(process.cwd(), ".data", "scores.json");
 const LIMIT = 10;
 
-const DEFAULT_ROWS = [
-  { initials: "BUG", score: 500 },
-  { initials: "SUN", score: 350 },
-  { initials: "RUN", score: 200 }
-];
+const DEFAULT_ROWS = [];
 
 module.exports = async function handler(request, response) {
   setCors(response);
